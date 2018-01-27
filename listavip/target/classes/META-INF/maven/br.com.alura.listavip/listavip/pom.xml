@@ -33,6 +33,13 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.1.4</version>
 		</dependency>
+		
+		<!-- hot deploy, ou seja, nao vamos mais precisar reiniciar a aplicacao toda vez que fizermos uma alteracao -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-devtools</artifactId>
+		    <version>1.5.9.RELEASE</version>
+		</dependency>
 
 	</dependencies>
 

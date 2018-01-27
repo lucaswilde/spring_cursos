@@ -14,7 +14,7 @@ public class Configuracao {
 		SpringApplication.run(Configuracao.class, args);
 	}
 	
-	@Bean
+	@Bean // injecao de dependencia
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");

@@ -33,12 +33,19 @@
 			<artifactId>postgresql</artifactId>
 			<version>42.1.4</version>
 		</dependency>
-		
-		<!-- hot deploy, ou seja, nao vamos mais precisar reiniciar a aplicacao toda vez que fizermos uma alteracao -->
+
+		<!-- hot deploy, ou seja, nao vamos mais precisar reiniciar a aplicacao 
+			toda vez que fizermos uma alteracao -->
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-devtools</artifactId>
-		    <version>1.5.9.RELEASE</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<version>1.5.9.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.examplebr.com.alura.enviadorEmail</groupId>
+			<artifactId>enviadorEmail</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>

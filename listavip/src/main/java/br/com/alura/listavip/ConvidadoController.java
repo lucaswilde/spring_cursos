@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.alura.listavip.model.Convidado;
-import br.com.alura.listavip.repository.ConvidadoRepository;
+import br.com.alura.listavip.service.ConvidadoService;
 
 @Controller // anotacoes do spring mvc
 public class ConvidadoController {
 	
+	
 	@Autowired
-	private ConvidadoRepository repository;
+	private ConvidadoService service;
 
 	// anotacoes do spring mvc
     @RequestMapping("/")
@@ -27,7 +28,7 @@ public class ConvidadoController {
 
     @RequestMapping("listaconvidados")
     public String listaconvidados(Model model) {
-    	Iterable<Convidado> convidados = repository.findAll();
+    	Iterable<Convidado> convidados = service.findAll();
     	model.addAttribute("convidados", convidados);
     	obterConvidadoPor("Lucas");
     	return "listaconvidados";
@@ -37,9 +38,11 @@ public class ConvidadoController {
     public String salvar(@RequestParam("nome") String nome, @RequestParam("email") String email, @RequestParam("telefone") String telefone
     		, Model model) {
     	
-    	repository.save(new Convidado(nome, email, telefone));
+    	service.save(new Convidado(nome, email, telefone));
     	
-    	Iterable<Convidado> convidados = repository.findAll();
+    	//new EmailService().enviarEmail(nome, email);
+    	
+    	Iterable<Convidado> convidados = service.findAll();
     	model.addAttribute("convidados", convidados);
     	
     	return "listaconvidados";
@@ -47,7 +50,7 @@ public class ConvidadoController {
     
     public void obterConvidadoPor(String nome){
 
-        List<Convidado> lista = repository.findByNome(nome);
+        List<Convidado> lista = service.findByNome(nome);
         System.out.println("pesquisando por nome, size: " + lista.size());
     }
 }

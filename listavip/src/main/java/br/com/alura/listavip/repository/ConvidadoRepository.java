@@ -8,4 +8,7 @@ import br.com.alura.listavip.model.Convidado;
 
 public interface ConvidadoRepository extends CrudRepository<Convidado, Long>{
 	List<Convidado> findByNome(String nome);
+	
+	// exemplos
+	// http://blog.algaworks.com/spring-data-jpa/
 }

@@ -14,6 +14,7 @@ public class Configuracao {
 		SpringApplication.run(Configuracao.class, args);
 	}
 	
+	/* comentando pois esse configuracao foi movida para o application.properties
 	@Bean // injecao de dependencia
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -23,4 +24,5 @@ public class Configuracao {
 		dataSource.setPassword("postgres");
 		return dataSource;
 	}
+	*/
 }
